@@ -24,7 +24,7 @@ namespace cmd_WindowsForms
         public Form1()
         {
             InitializeComponent();
-            listBox1.Items.Add(paramsFromFile());  
+            
         }
 
         public Form1(string param)
@@ -35,7 +35,19 @@ namespace cmd_WindowsForms
 
         private void Form1_Activated(object sender, EventArgs e)
         {
+            
+        }
+
+        private void menuUpdate_Click(object sender, EventArgs e)
+        {
             listBox1.Items.Add("from FIELD " + countSimbols.ToString());
+            listBox1.Items.Add(paramsFromFile());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            listBox1.Items.Add("from FIELD " + countSimbols.ToString());
+            listBox1.Items.Add(paramsFromFile());
         }
     }
 }

@@ -13,6 +13,7 @@ namespace cmd_WindowsForms
   
     public partial class Form2 : Form
     {
+        Form1 f;
         string readFromFile(string fileName)
         {
             StreamReader sr = new StreamReader(fileName);
@@ -23,6 +24,8 @@ namespace cmd_WindowsForms
         public Form2(string[] pars)
         {
             InitializeComponent();
+            f = new Form1();
+            f.Show();
             try
             {
                 //MessageBox.Show(pars[0]);
@@ -38,22 +41,20 @@ namespace cmd_WindowsForms
         {
             StreamWriter sw = new StreamWriter("params.txt");
             sw.WriteLine(textBox1.Text.Length);
-            sw.Close();
-            Form1 f = new Form1();
-            f.Show();
+            sw.Close(); 
         }
 
         private void menuPassByNew_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1(textBox1.Text.Length.ToString());
-            f.Show();
+            //Form1 f = new Form1(textBox1.Text.Length.ToString());
+            //f.Show();
         }
 
         private void menuPassByFild_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            //Form1 f = new Form1();
             f.countSimbols = textBox1.Text.Length;
-            f.Show();
+            //f.Show();
         }
     }
 }
